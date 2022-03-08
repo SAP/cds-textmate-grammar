@@ -4,6 +4,6 @@ The project provides a TextMate grammar for SAP Cloud Application Programming Mo
 
 # Licensing
 
-Please see our [LICENSE](./LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/odata-vocabularies).
+Please see our [LICENSE](./LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available via the [REUSE tool](https://api.reuse.software/info/github.com/SAP/cds-textmate-grammar).
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/cds-textmate-grammar)](https://api.reuse.software/info/github.com/SAP/cds-textmate-grammar)
