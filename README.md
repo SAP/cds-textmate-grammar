@@ -1,5 +1,6 @@
-# @SAP/repository-template
-Default templates of SAP's repositories. Provides template files including LICENSE, .reuse/dep5, Code of Conduct, etc... All repositories on github.com/SAP will be created based on this template.
+# @SAP/cds-textmate-grammar
+
+The project provides a TextMate grammar for SAP Cloud Application Programming Model CDS files. The grammar allows syntax highlighting of CDS files in many IDEs, especially in Github's file viewers with the help of the [Linguist](https://github.com/github/linguist) library.
 
 # Containing files
 
