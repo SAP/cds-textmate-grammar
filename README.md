@@ -5,3 +5,5 @@ The project provides a TextMate grammar for SAP Cloud Application Programming Mo
 # Licensing
 
 Please see our LICENSE for copyright and license information.
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/cds-textmate-grammar)](https://api.reuse.software/info/github.com/SAP/cds-textmate-grammar)
