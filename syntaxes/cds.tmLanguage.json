@@ -1,7 +1,9 @@
 {
   "comment": "SAP CAP CDS Syntax 2.0 (open-source)",
   "fileTypes": [
-    "cds"
+    "cds",
+    "cdl",
+    "hdbdd"
   ],
   "name": "CDS",
   "patterns": [
@@ -351,18 +353,13 @@
               "name": "punctuation.definition.string.end.cds"
             }
           },
-          "name": "string.regexp.cds",
-          "patterns": [
-            {
-              "include": "source.cds.regexp"
-            }
-          ]
+          "name": "string.regexp.cds"
         }
       ]
     },
     {
       "comment": "CDS grammar rule: typeRefOptArgs",
-      "match": "(?<!\\w)[$_a-zA-Z][$_a-zA-Z0-9]*(\\s*:\\s*[$_a-zA-Z][$_a-zA-Z0-9]*)?(?=\\s*([:{]|as\\b))",
+      "match": "(?<!\\w|entity\\s|aspect\\s|projection\\son\\s)[$_a-zA-Z][$_a-zA-Z0-9]*(\\s*:\\s*[$_a-zA-Z][$_a-zA-Z0-9]*)?(?=\\s*([:{]|as\\b))",
       "name": "entity.name.type.attribute-name.cds"
     },
     {
@@ -690,18 +687,24 @@
     "strings": {
       "patterns": [
         {
-          "begin": "'(?=(''|[^\\n'])*')",
+          "begin": "'",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.string.begin.cds"
             }
           },
-          "end": "(?<=(?:''|[^\\n']))'(?!')",
+          "end": "'(?!')",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.cds"
             }
           },
+          "patterns": [
+            {
+              "match": "''",
+              "name": "meta.single-quote.doubled.cds"
+            }
+          ],
           "name": "string.quoted.single.cds"
         },
         {
