@@ -1,9 +1,7 @@
 {
   "comment": "SAP CAP CDS Syntax 2.0 (open-source)",
   "fileTypes": [
-    "cds",
-    "cdl",
-    "hdbdd"
+    "cds"
   ],
   "name": "CDS",
   "patterns": [
@@ -336,28 +334,6 @@
       "name": "meta.class.cds"
     },
     {
-      "begin": "(?<=[\\[=(?:+,!]|^|return|=>|&&|\\|\\|)\\s*(?=/[^/*+?].*/)",
-      "comment": "Dont scope preceding whitespace as string.regex",
-      "end": "(?<=[/igmuy])",
-      "patterns": [
-        {
-          "begin": "/",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.definition.string.begin.cds"
-            }
-          },
-          "end": "(/)[igmuy]*",
-          "endCaptures": {
-            "1": {
-              "name": "punctuation.definition.string.end.cds"
-            }
-          },
-          "name": "string.regexp.cds"
-        }
-      ]
-    },
-    {
       "comment": "CDS grammar rule: typeRefOptArgs",
       "match": "(?<!\\w|entity\\s|aspect\\s|projection\\son\\s)[$_a-zA-Z][$_a-zA-Z0-9]*(\\s*:\\s*[$_a-zA-Z][$_a-zA-Z0-9]*)?(?=\\s*([:{]|as\\b))",
       "name": "entity.name.type.attribute-name.cds"
@@ -542,7 +518,7 @@
           "name": "entity.other.attribute-name"
         },
         {
-          "begin": "/\\*\\*",
+          "begin": "/\\*\\*(?!/)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.comment.begin.cds"
@@ -724,55 +700,60 @@
           "patterns": [
             {
               "include": "#interpolation"
+            },
+            {
+              "include": "#escapes"
             }
           ]
         }
-      ],
-      "repository": {
-        "interpolation": {
-          "begin": "\\$\\{",
+      ]
+    },
+    "escapes": {
+      "match": "\\\\([xu$]\\{?[0-9a-fA-F]+\\}?|.|$)",
+      "name": "constant.character.escape.cds"
+    },
+    "interpolation": {
+      "begin": "\\$\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.begin.cds"
+        }
+      },
+      "contentName": "source.cds",
+      "end": "(\\})",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.embedded.end.cds"
+        },
+        "1": {
+          "name": "source.cds"
+        }
+      },
+      "name": "meta.embedded.line.cds",
+      "patterns": [
+        {
+          "begin": "\\{",
           "beginCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.begin.cds"
+              "name": "meta.brace.curly.cds"
             }
           },
-          "contentName": "source.cds",
-          "end": "(\\})",
+          "end": "\\}",
           "endCaptures": {
             "0": {
-              "name": "punctuation.section.embedded.end.cds"
-            },
-            "1": {
-              "name": "source.cds"
+              "name": "meta.brace.curly.cds"
             }
           },
-          "name": "meta.embedded.line.cds",
           "patterns": [
-            {
-              "begin": "\\{",
-              "beginCaptures": {
-                "0": {
-                  "name": "meta.brace.curly.cds"
-                }
-              },
-              "end": "\\}",
-              "endCaptures": {
-                "0": {
-                  "name": "meta.brace.curly.cds"
-                }
-              },
-              "patterns": [
-                {
-                  "include": "$self"
-                }
-              ]
-            },
             {
               "include": "$self"
             }
           ]
+        },
+        {
+          "include": "$self"
         }
-      }
+      ]
     }
   },
   "scopeName": "source.cds"
