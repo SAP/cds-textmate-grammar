@@ -963,6 +963,9 @@
           "include": "#optColonAndArray"
         },
         {
+          "include": "#colonAndBracketedExpression"
+        },
+        {
           "include": "#colonAndNumber"
         },
         {
@@ -1062,6 +1065,9 @@
         },
         {
           "include": "#optColonAndArray"
+        },
+        {
+          "include": "#colonAndBracketedExpression"
         },
         {
           "include": "#colonAndNumber"
@@ -1707,6 +1713,9 @@
         }
       },
       "patterns": [
+        {
+          "include": "#comment"
+        },
         {
           "include": "#bracedSelectItemDef"
         },
