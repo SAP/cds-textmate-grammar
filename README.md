@@ -1,6 +1,6 @@
-# @SAP/cds-textmate-grammar
+# cds-textmate-grammar
 
-The project provides a TextMate grammar for SAP Cloud Application Programming Model CDS files. The grammar allows syntax highlighting of CDS files in many IDEs, especially in Github's file viewers with the help of the [Linguist](https://github.com/github/linguist) library.
+The project provides a TextMate grammar for the [CDS language](https://cap.cloud.sap/docs/cds/cdl) of the SAP Cloud Application Programming Model. The grammar allows syntax highlighting of CDS files in many IDEs, especially in Github's file viewers with the help of the [Linguist](https://github.com/github/linguist) library.
 
 Note that we don't accept any contributions to this project, as it is only maintained by SAP.
 
